@@ -1,9 +1,14 @@
-n=int(input("Enter size of array:"))
-arr=[int(input(f"Enter elements[{i}]:")) for i in range(n)]
-sum=0
-for i in range(len(arr)):
-    if arr[i]%3==0 and arr[i]>0:
-        sum+=arr[i]
-        print("Sum:", sum)
-    else:
-        print(f"This elements[{i}] dont more than 0 and divisible by 3")
+n = 7
+bim=7
+arr=[[0 for _ in range(n)] for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i==j:
+            arr[i][j]=7
+        elif i>j:
+            arr[i][j]=bim-i+j
+        elif i<j:
+            arr[i][j]=bim+i-j
+
+for r in arr:
+        print(*r)
